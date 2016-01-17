@@ -1,0 +1,22 @@
+{
+  "name": "project1",
+  "authors": [
+    "LehaKos <lehakos@gmail.com>"
+  ],
+  "description": "LoftSchool training project №1",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^1.8",
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}
