@@ -67,6 +67,21 @@ img {
   height: 60px;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~ LINK ~~~~~~~~~~~~~~~~~~~~~ */
+
+.link {
+  color: #cc9324;
+  text-decoration: none;
+
+  -webkit-transition: color .3s ease;
+
+          transition: color .3s ease;
+}
+
+.link:hover {
+  color: #edc575;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~~~~~~~~~~ */
 
 .header {
@@ -275,6 +290,7 @@ img {
 
   background: url('../images/bg-main.jpg') no-repeat center center;
   background-size: 100% 100%;
+  background-size: cover;
 }
 
 .main__col-left {
@@ -289,10 +305,6 @@ img {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ SIDEBAR ~~~~~~~~~~~~~~~~~~~~~ */
-
-.sidebar {
-
-}
 
 .sidebar__nav {
   margin-bottom: 35px;
@@ -414,11 +426,9 @@ img {
 }
 
 .contacts__item {
-  margin-top: -1px;
-}
-
-.contacts__item:first-child {
-  margin-top: 0;
+  border: 1px solid #d6d5d3;
+  border-top: none;
+  border-bottom-width: 2px;
 }
 
 .contacts__link {
@@ -431,7 +441,6 @@ img {
   color: #727070;
   text-decoration: none;
 
-  border: 1px solid #d6d5d3;
   background-color: #faf9f9;
   background-image: -webkit-linear-gradient(bottom, #e9e7e7 0%, #fbf9f9 100%);
   background-image: linear-gradient(to top, #e9e7e7 0%, #fbf9f9 100%);
@@ -479,6 +488,10 @@ img {
 
   -webkit-transition: opacity .5s ease;
           transition: opacity .5s ease;
+}
+
+.contacts__link:hover {
+  text-decoration: underline;
 }
 
 .contacts__link:hover:after {
@@ -535,8 +548,13 @@ img {
   padding: 35px;
 
   background-color: #f6f5f5;
-  box-shadow: 0px 5px 10px 0px rgba(236, 232, 227, .75),
-              inset 0px 6px 6px 0px rgba(255, 255, 255, .004);
+  box-shadow: 0px 2px 10px 2px rgba(236, 232, 227, .25),
+              inset 0px 6px 6px 0px rgba(255, 255, 255, .04);
+}
+
+.section__content_v-padding_low {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .section__heading {
@@ -608,26 +626,69 @@ img {
   margin-bottom: 8px;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~ LIST ~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~ ICONS-LIST ~~~~~~~~~~~~~~~~~~~~~ */
 
-.list {
+.icons-list {
   margin: 0;
   padding: 0;
 
   list-style: none;
 }
 
-.list__item {
-  margin-top: 10px;
+.icons-list__item {
+  position: relative;
+
+  padding: 25px;
+  padding-left: 95px;
 }
 
-.list__item:first-child {
-  margin-top: 0;
+.icons-list__item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 2px;
+  width: 100%;
+
+  border-radius: 1px;
+  background-color: #f6f5f4;
+  box-shadow: inset 0 1px 1px 0 rgba(128, 128, 128, .29);
 }
 
-.list__heading {
+.icons-list__item:first-child:before {
+  content: none;
+}
+
+.icons-list__heading {
   display: block;
   margin-bottom: 5px;
+}
+
+.icons-list__icon-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 54px;
+  height: 54px;
+  margin-top: -27px;
+
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  box-shadow: 0px 1px 0 0 #fff,
+              inset 1px 1px 0 0 rgba(199, 199, 199, .75);
+  overflow: hidden;
+}
+
+.icons-list__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ TAG ~~~~~~~~~~~~~~~~~~~~~ */
@@ -667,9 +728,7 @@ img {
   height: 18px;
   margin-right: -2px;
 
-  background-image: url('../images/sprite.png');
-  background-repeat: no-repeat;
-  background-position: -162px 0;
+  background: url('../images/sprite.png') no-repeat -162px 0;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~ */
@@ -677,6 +736,61 @@ img {
 .footer {
   position: relative;
 
-  height: 60px;
   margin-top: -60px;
+
+  text-align: center;
+
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, .1);
 }
+
+.footer__container {
+  height: 60px;
+}
+
+.footer__container:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 100%;
+
+  vertical-align: middle;
+}
+
+.footer__auth {
+  display: inline-block;
+  margin-right: 65px;
+
+  font-weight: 700;
+  font-size: 0.875em; /* 14/16 */
+  color: #9c9c9c;
+  vertical-align: middle;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .85);
+}
+
+.footer__auth:before {
+  content: '';
+  display: inline-block;
+  width: 23px;
+  height: 21px;
+  margin-right: 5px;
+
+  vertical-align: middle;
+  background: url('../images/sprite.png') no-repeat -5px -94px;
+}
+
+.footer__auth:hover:before {
+  width: 23px;
+  height: 21px;
+  background-position: -33px -121px;
+}
+
+.footer__copyright {
+  display: inline-block;
+
+  font-weight: 300;
+  font-size: .75em; /* 12/16 */
+  color: #727070;
+  vertical-align: middle;
+}
+
