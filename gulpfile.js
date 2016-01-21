@@ -1,5 +1,24 @@
 var gulp = require("gulp"),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    modernizr = require('gulp-modernizr');
+
+// Сборка файла modernizr
+gulp.task('modernizr', function() {
+  gulp.src('app/js/*.js')
+    .pipe(modernizr({
+      'options': [
+        'setClasses',
+        'html5shiv'
+      ],
+      'tests': [
+        'placeholder',
+        'csstransforms',
+        'cssgradients'
+      ],
+      'uglify': true
+    }))
+    .pipe(gulp.dest("app/js/vendor"))
+});
 
 // Сервер
 gulp.task('server', function () {
@@ -21,4 +40,4 @@ gulp.task('watch', function () {
 });
 
 // Задача по-умолчанию
-gulp.task('default', ['server', 'watch']);
+gulp.task('default', ['modernizr','server', 'watch']);
