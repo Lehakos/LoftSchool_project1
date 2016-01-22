@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-cssgradients-csstransforms-placeholder-setclasses-shiv-dontmin
+ * Build http://modernizr.com/download?-cssgradients-csstransforms-placeholder-rgba-setclasses-shiv-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1199,6 +1199,26 @@ Tests for placeholder attribute in inputs and textareas
 
     // IE6 returns undefined so cast to string
     return ('' + style.backgroundImage).indexOf('gradient') > -1;
+  });
+
+/*!
+{
+  "name": "CSS rgba",
+  "caniuse": "css3-colors",
+  "property": "rgba",
+  "tags": ["css"],
+  "notes": [{
+    "name": "CSSTricks Tutorial",
+    "href": "https://css-tricks.com/rgba-browser-support/"
+  }]
+}
+!*/
+
+  Modernizr.addTest('rgba', function() {
+    var style = createElement('a').style;
+    style.cssText = 'background-color:rgba(150,255,150,.5)';
+
+    return ('' + style.backgroundColor).indexOf('rgba') > -1;
   });
 
 

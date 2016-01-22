@@ -13,7 +13,8 @@ gulp.task('modernizr', function() {
       'tests': [
         'placeholder',
         'csstransforms',
-        'cssgradients'
+        'cssgradients',
+        'rgba'
       ],
       'uglify': true
     }))

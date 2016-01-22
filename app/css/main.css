@@ -59,6 +59,8 @@ img {
 
   min-height: 100%;
 
+  background: url('../images/bg-main.jpg') no-repeat center center;
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -193,6 +195,30 @@ img {
   margin: auto;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~ ROUND-ICON ~~~~~~~~~~~~~~~~~~~~~ */
+
+.round-icon {
+  position: relative;
+  width: 54px;
+  height: 54px;
+
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  box-shadow: 0px 1px 0 0 #fff,
+              inset 1px 1px 0 0 rgba(199, 199, 199, .75);
+}
+
+
+.round-icon__inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~ ICON ~~~~~~~~~~~~~~~~~~~~~ */
 
 .icon {
@@ -207,75 +233,81 @@ img {
 }
 
 .icon_briefcase {
-    width: 21px;
-    height: 19px;
-    background-position: -5px -5px;
+  width: 21px;
+  height: 19px;
+  background-position: -5px -5px;
 }
 
 .icon_cloud {
-    width: 25px;
-    height: 18px;
-    background-position: -36px -5px;
+  width: 25px;
+  height: 18px;
+  background-position: -36px -5px;
 }
 
 .icon_file {
-    width: 15px;
-    height: 20px;
-    background-position: -111px -5px;
+  width: 15px;
+  height: 20px;
+  background-position: -111px -5px;
 }
 
 .icon_graduate {
-    width: 27px;
-    height: 18px;
-    background-position: -83px -37px;
+  width: 27px;
+  height: 18px;
+  background-position: -83px -37px;
 }
 
 .icon_key {
-    width: 21px;
-    height: 19px;
-    background-position: -83px -65px;
+  width: 21px;
+  height: 19px;
+  background-position: -83px -65px;
 }
 
 .icon_locked {
-    width: 18px;
-    height: 21px;
-    background-position: -5px -94px;
+  width: 18px;
+  height: 21px;
+  background-position: -5px -94px;
 }
 
 .icon_mail {
-    width: 16px;
-    height: 12px;
-    background-position: -33px -94px;
+  width: 16px;
+  height: 12px;
+  background-position: -33px -94px;
 }
 
 .icon_mail-grey {
-    width: 22px;
-    height: 16px;
-    background-position: -59px -94px;
+  width: 22px;
+  height: 16px;
+  background-position: -59px -94px;
 }
 
 .icon_phone {
-    width: 16px;
-    height: 21px;
-    background-position: -91px -94px;
+  width: 16px;
+  height: 21px;
+  background-position: -91px -94px;
 }
 
 .icon_school {
-    width: 21px;
-    height: 21px;
-    background-position: -136px -5px;
+  width: 21px;
+  height: 21px;
+  background-position: -136px -5px;
 }
 
 .icon_skype {
-    width: 19px;
-    height: 19px;
-    background-position: -120px -36px;
+  width: 19px;
+  height: 19px;
+  background-position: -120px -36px;
 }
 
 .icon_unlocked {
-    width: 23px;
-    height: 21px;
-    background-position: -33px -121px;
+  width: 23px;
+  height: 21px;
+  background-position: -33px -121px;
+}
+
+.icon_img {
+  width: 20px;
+  height: 20px;
+  background-position: -148px -36px;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ LOGO ~~~~~~~~~~~~~~~~~~~~~ */
@@ -288,10 +320,6 @@ img {
 
 .main {
   padding-top: 35px;
-
-  background: url('../images/bg-main.jpg') no-repeat center center;
-  background-size: 100% 100%;
-  background-size: cover;
 }
 
 .main__col-left {
@@ -306,6 +334,10 @@ img {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ SIDEBAR ~~~~~~~~~~~~~~~~~~~~~ */
+
+.sidebar {
+  margin-bottom: 35px;
+}
 
 .sidebar__nav {
   margin-bottom: 35px;
@@ -337,9 +369,8 @@ img {
               inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3);
 }
 
-.navigation__item_active .navigation__link:hover:after {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  opacity: 0;
+.navigation__item_active .navigation__link:after {
+  content: none;
 }
 
 .navigation__link {
@@ -492,8 +523,8 @@ img {
           transition: opacity .5s ease;
 }
 
-.contacts__link:hover {
-  text-decoration: underline;
+.contacts__link:hover .contacts__link-text:after {
+  width: 100%;
 }
 
 .contacts__link:hover:after {
@@ -504,6 +535,22 @@ img {
 .contacts__link-text {
   position: relative;
   z-index: 3;
+}
+
+.contacts__link-text:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  width: 0;
+  height: 1px;
+
+  background-color: currentColor;
+
+  -webkit-transition: width .4s ease;
+
+          transition: width .4s ease;
 }
 
 .contacts__icon {
@@ -677,25 +724,7 @@ img {
   top: 50%;
   left: 0;
 
-  width: 54px;
-  height: 54px;
   margin-top: -27px;
-
-  background-color: #f5f5f5;
-  border-radius: 50%;
-  box-shadow: 0px 1px 0 0 #fff,
-              inset 1px 1px 0 0 rgba(199, 199, 199, .75);
-  overflow: hidden;
-}
-
-.icons-list__icon {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  margin: auto;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ TAG ~~~~~~~~~~~~~~~~~~~~~ */
@@ -731,11 +760,11 @@ img {
   top: 0;
   right: 100%;
 
-  width: 9px;
+  width: 12px;
   height: 18px;
   margin-right: -2px;
 
-  background: url('../images/sprite.png') no-repeat -162px 0;
+  background: url('../images/sprite.png') no-repeat -159px -5px;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~ */
@@ -748,6 +777,7 @@ img {
   text-align: center;
 
   box-shadow: 0 -1px 0 0 rgba(0, 0, 0, .1);
+  background-color: #f9f9f9;
 }
 
 .footer__container {
