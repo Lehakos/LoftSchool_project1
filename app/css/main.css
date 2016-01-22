@@ -582,7 +582,8 @@ img {
   margin: 0;
   padding: 15px 40px;
 
-  font-size: 1.5em; /*24/16*/
+  font-weight: 600;
+  font-size: 1.7142857143em; /*24/14*/
   line-height: 0.9166666667; /*22/24*/
   color: #eeedec;
   text-shadow: 0px 1px 0px #666565;

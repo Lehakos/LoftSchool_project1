@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Учебный проект №1</title>
+  <link rel="stylesheet" href="bower/normalize-css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/callback.css">
+  <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="container container_wide clearfix">
+
+        <a class="logo header__logo" href="index.html">
+          <img src="images/logo.png" alt="LoftSchool - от мыслителя к создателю">
+          <h1 class="screenreader">Персональный сайт Косьяненко Алексея</h1>
+        </a>
+
+        <ul class="social header__social">
+          <li class="social__item">
+            <a class="social__link social__link_fb" href="https://www.facebook.com/profile.php?id=100006935191100" title="Ссылка на профиль в facebook">
+              <i class="icon social__icon">Ссылка на профиль в facebook</i>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link_vk" href="https://vk.com/id4009342" title="Ссылка на профиль в vkontakte">
+              <i class="icon social__icon">Ссылка на профиль в vkontakte</i>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link_tw" href="https://twitter.com/Lehakoss" title="Ссылка на профиль в twitter">
+              <i class="icon social__icon">Ссылка на профиль в twitter</i>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link_github" href="https://github.com/Lehakos" title="Ссылка на профиль в github">
+              <i class="icon ion social__icon">Ссылка на профиль в github</i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container clearfix">
+
+        <aside class="sidebar main__col main__col-left">
+
+          <h2 class="screenreader">Боковое меню</h2>
+
+          <nav class="navigation sidebar__nav">
+
+            <h2 class="screenreader">Навигация по сайту</h2>
+
+            <ul class="navigation__menu">
+              <li class="navigation__item">
+                <a class="navigation__link" href="index.html">
+                  <span class="navigation__link-text">Обо мне</span>
+                </a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="works.html">
+                  <span class="navigation__link-text">Мои работы</span>
+                </a>
+              </li>
+              <li class="navigation__item navigation__item_active">
+                <div class="navigation__link">
+                  <span class="navigation__link-text">Обратная связь</span>
+                </div>
+              </li>
+            </ul>
+
+          </nav>
+
+          <section class="contacts">
+            <h2 class="contacts__title">Контакты</h2>
+            <ul class="contacts__menu">
+              <li class="contacts__item">
+                <a class="contacts__link" href="mailto:lehakos@gmail.com">
+                  <i class="icon icon_mail contacts__icon">Почта</i>
+                  <span class="contacts__link-text">lehakos@gmail.com</span>
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a class="contacts__link" href="tel:+79678276573">
+                  <i class="icon icon_phone contacts__icon">Телефон</i>
+                  <span class="contacts__link-text">+79678276573</span>
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a class="contacts__link" href="skype:kosdevelop">
+                  <i class="icon icon_skype contacts__icon">Скайп</i>
+                  <span class="contacts__link-text">kosdevelop</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+        </aside>
+
+        <div class="content-area main__col-right">
+
+          <section class="section callback">
+
+            <h2 class="section__title callback__title">У вас интересный проект? Напишите мне</h2>
+
+            <div class="section__content">
+
+              <form class="form callback__form" name="write-me" action="" method="post">
+
+                <fieldset class="form__row">
+                  <div class="form__col">
+                    <label for="form-name" class="label">Имя</label>
+                    <input name="name" type="text" id="form-name" class="input" placeholder="Как к Вам обращаться">
+                  </div>
+                  <div class="form__col">
+                    <label for="form-email" class="label">Email</label>
+                    <input name="email" type="email" id="form-email" class="input" placeholder="Куда мне писать">
+                  </div>
+                </fieldset>
+
+                <fieldset class="form__row">
+                  <label for="form-message" class="label">Сообщение</label>
+                  <textarea name="message" id="form-message" class="input input_type_textarea" placeholder="Кратко в чем суть"></textarea>
+                </fieldset>
+
+                <label for="form-captcha" class="label">Введите код, указанный на картинке</label>
+                <fieldset class="form__row">
+                  <div class="form__col">
+                    <div class="captcha"><img src="images/captcha.jpg" alt="Каптча"></div>
+                  </div>
+                  <div class="form__col">
+                    <input name="captcha" type="text" id="form-captcha" class="input" placeholder="Введите код">
+                  </div>
+                </fieldset>
+
+                <div class="form__btn-container clearfix">
+                  <button class="btn btn_bright btn_pos_left" type="submit">Отправить</button>
+                  <button class="btn btn_pos_right" type="reset">Очистить</button>
+                </div>
+
+              </form>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__container">
+
+      <a class="footer__auth" href="javascript:void(0)">вход</a>
+
+      <div class="footer__copyright">&copy;2016. Это мой сайт, пожалуйста, не копируйте и не воруйте его!</div>
+
+    </div>
+  </footer>
+
+  <script src="bower/jquery/dist/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
