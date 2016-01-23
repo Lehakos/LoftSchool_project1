@@ -150,16 +150,22 @@
   background-image: -webkit-linear-gradient(bottom, #c2c0c0 0%, #e3e1e1 87%, #e6e4e4 90%, #e8e7e7 100%);
   background-image: linear-gradient(to top, #c2c0c0 0%, #e3e1e1 87%, #e6e4e4 90%, #e8e7e7 100%);
   box-shadow: inset 0 -2px 1px 0 rgba(41, 41, 41, .04);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   opacity: 0;
 
   -webkit-transition: opacity .4s ease, -webkit-transform .3s ease;
           transition: opacity .4s ease, transform .3s ease;
 }
 
+.no-opacity .btn:after {
+  visibility: hidden;
+}
+
 .btn:hover:after {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
   opacity: 1;
+}
+
+.no-opacity .btn:hover:after {
+  visibility: visible;
 }
 
 .btn:active {

@@ -14,7 +14,8 @@ gulp.task('modernizr', function() {
         'placeholder',
         'csstransforms',
         'cssgradients',
-        'rgba'
+        'rgba',
+        'opacity'
       ],
       'uglify': true
     }))

@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-cssgradients-csstransforms-placeholder-rgba-setclasses-shiv-dontmin
+ * Build http://modernizr.com/download?-cssgradients-csstransforms-opacity-placeholder-rgba-setclasses-shiv-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1219,6 +1219,29 @@ Tests for placeholder attribute in inputs and textareas
     style.cssText = 'background-color:rgba(150,255,150,.5)';
 
     return ('' + style.backgroundColor).indexOf('rgba') > -1;
+  });
+
+/*!
+{
+  "name": "CSS Opacity",
+  "caniuse": "css-opacity",
+  "property": "opacity",
+  "tags": ["css"]
+}
+!*/
+
+  // Browsers that actually have CSS Opacity implemented have done so
+  // according to spec, which means their return values are within the
+  // range of [0.0,1.0] - including the leading zero.
+
+  Modernizr.addTest('opacity', function() {
+    var style = createElement('a').style;
+    style.cssText = prefixes.join('opacity:.55;');
+
+    // The non-literal . in this regex is intentional:
+    // German Chrome returns this value as 0,55
+    // github.com/Modernizr/Modernizr/issues/#issue/59/comment/516632
+    return (/^0.55$/).test(style.opacity);
   });
 
 
