@@ -180,7 +180,7 @@
                 </li>
 
                 <li class="works__item-wrapper">
-                  <a href="javascript:void(0)" class="works__item works__item_add">
+                  <a href="javascript:void(0)" class="works__item works__item_add js-popup-open" data-popup="add-project-popup">
                     <div class="round-icon works__icon">
                       <i class="icon icon_img round-icon__inner">Нажав сюда вы сможете загрузить новый проект</i>
                     </div>
@@ -211,6 +211,47 @@
 
     </div>
   </footer>
+
+  <div id="add-project-popup" class="popup">
+    <div class="popup__content">
+
+      <a href="javascript:void(0)" class="popup__close icon icon_close js-popup-close" title="Закрыть">Закрыть окно</a>
+      <div class="popup__title">Добавление проекта</div>
+
+      <form action="" method="post" class="form" name="add-project">
+
+        <div class="form__block form__block_margin_s">
+          <label for="form-project-name" class="label">Название проекта</label>
+          <input type="text" id="form-project-name" class="input" name="name" placeholder="Введите название">
+        </div>
+
+        <div class="form__block form__block_margin_s">
+          <label for="form-project-img" class="label">Картинка проекта</label>
+          <label for="form-project-img" class="input-file input">
+            <span class="input-file__text">Загрузите изображение Загрузите изображение Загрузите изображение Загрузите изображение</span>
+            <span class="input-file__btn">
+              <i class="icon icon_cloud input-file__icon">Нажмите сюда и выберите файл изображения с Вашего компьютера</i>
+            </span>
+            <input type="file" id="form-project-img" class="input-file__hidden" name="img">
+          </label>
+        </div>
+
+        <div class="form__block form__block_margin_s">
+          <label for="form-project-url" class="label">URL проекта</label>
+          <input type="url" id="form-project-url" class="input" name="url" placeholder="Добавьте ссылку в формате http://url.com">
+        </div>
+
+        <div class="form__block">
+          <label for="form-project-desc" class="label">Описание</label>
+          <textarea id="form-project-desc" class="textarea textarea_size_s" name="description" placeholder="Пара слов о Вашем проекте"></textarea>
+        </div>
+
+        <button class="btn btn_bright btn_pos_center" type="submit"><span class="btn__text">Добавить</span></button>
+
+      </form>
+
+    </div>
+  </div>
 
   <script src="bower/jquery/dist/jquery.min.js"></script>
   <script src="js/main.js"></script>
