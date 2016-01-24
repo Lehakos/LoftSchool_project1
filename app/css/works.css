@@ -131,7 +131,7 @@
 .works__name {
   padding: 5px;
 
-  font-weight: 600;
+  font-family: 'open_sanssemibold', Arial, sans-serif;
   font-size: .8125em; /*13/16*/
   line-height: 1.6923076923; /*22/13*/
 
