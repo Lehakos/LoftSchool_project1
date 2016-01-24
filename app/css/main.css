@@ -1219,6 +1219,10 @@ img {
   background-color: rgba(0, 0, 0, .72);
 }
 
+.no-rgba .popup {
+  background-image: url('../images/overlay.png');
+}
+
 .popup:after {
   content: '';
   display: inline-block;
