@@ -407,7 +407,7 @@ img {
 }
 
 .sidebar__nav {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ NAVIGATION ~~~~~~~~~~~~~~~~~~~~~ */
@@ -540,7 +540,7 @@ img {
   position: relative;
 
   display: block;
-  padding: 10px 15px 10px 100px;
+  padding: 9px 15px 9px 100px;
 
   font-size: 0.875em; /*14/16*/
   color: #727070;
@@ -558,7 +558,7 @@ img {
   content: '';
   position: absolute;
   top: 50%;
-  left: 50px;
+  left: 40px;
   z-index: 3;
 
   height: 20px;
@@ -665,7 +665,7 @@ img {
 
 .section__title {
   margin: 0;
-  padding: 15px 40px;
+  padding: 15px 40px 20px;
 
   font-family: 'open_sanssemibold', Arial, sans-serif;
   font-size: 1.7142857143em; /*24/14*/
@@ -725,12 +725,12 @@ img {
 
 .general__photo {
   float: left;
-  margin-right: 30px;
+  margin-right: 35px;
 }
 
 .general__table {
   float: left;
-  width: 393px;
+  width: 388px;
 }
 
 .general__table-row {
@@ -738,11 +738,15 @@ img {
 }
 
 .general__table-row {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .general__table-row:first-child {
   margin-top: 0;
+}
+
+.general__table-row_skills {
+  margin-top: 15px;
 }
 
 .general__table-cell {
@@ -763,7 +767,7 @@ img {
 
 .general__skills-item {
   margin-right: 5px;
-  margin-bottom: 8px;
+  margin-top: 6px;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ ICONS-LIST ~~~~~~~~~~~~~~~~~~~~~ */
@@ -778,7 +782,7 @@ img {
 .icons-list__item {
   position: relative;
 
-  padding: 25px;
+  padding: 27px;
   padding-left: 95px;
 }
 
@@ -808,7 +812,7 @@ img {
 .icons-list__icon-wrapper {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 5px;
 
   margin-top: -27px;
 }
@@ -865,7 +869,7 @@ img {
 
   margin-top: -60px;
 
-  text-align: center;
+  text-align: left;
 
   box-shadow: 0 -1px 0 0 rgba(0, 0, 0, .1);
   background-color: #f9f9f9;
@@ -886,7 +890,8 @@ img {
 
 .footer__auth {
   display: inline-block;
-  margin-right: 65px;
+  margin-left: 170px;
+  margin-right: 60px;
 
   font-family: 'open_sansbold', Arial, sans-serif;
   font-size: 0.875em; /* 14/16 */
