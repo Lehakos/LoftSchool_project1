@@ -1285,6 +1285,10 @@ img {
   vertical-align: middle;
 }
 
+.input-file_non-empty {
+  color: #000;
+}
+
 .input-file__text {
   display: inline-block;
   width: 100%;

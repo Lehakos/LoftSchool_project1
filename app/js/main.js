@@ -1,5 +1,7 @@
 $(function() {
 
+  // ПОПАПЫ
+
   $('.js-popup-open').on('click', function(e) {
 
     var
@@ -39,6 +41,31 @@ $(function() {
 
   });
 
+  // INPUT-FILE
+
+  $( '.input-file' ).each( function() {
+    var
+      $this = $(this),
+      $defaultVal = $this.text(),
+      $textContainer = $this.find('.input-file__text'),
+      $hiddenInput = $this.find('.input-file__hidden');
+
+    $hiddenInput.on( 'change', function(e) {
+
+      var fileName = e.target.value.split( '\\' ).pop();
+
+      if(fileName) {
+        $textContainer.text(fileName);
+
+        if (!$this.hasClass('input-file_non-empty')) {
+          $this.addClass('input-file_non-empty');
+        }
+      }
+    });
+  });
+
+  // ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+
   function measureScrollBarWidth() {
     var div = document.createElement('div');
 
@@ -64,8 +91,6 @@ $(function() {
       scrollBarWidth = measureScrollBarWidth(),
       $elem = $(selector);
 
-    console.log(selector)
-
     if ($elem.hasClass('no-scroll')) {
       $elem.css({
         'padding-right': scrollBarWidth + 'px'
@@ -77,7 +102,6 @@ $(function() {
         'padding-right': ''
       });
     }
-
 
   }
 
