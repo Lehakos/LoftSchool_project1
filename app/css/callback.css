@@ -1,11 +1,26 @@
 /* ~~~~~~~~~~~~~~ CALLBACK ~~~~~~~~~~~~~~~ */
 
 .callback__form {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .callback__title {
   font-family: 'open_sansregular', Arial, sans-serif;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .callback__form-col {
+    width: 100%;
+  }
+
+  .callback__form-col:first-child {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
 }
