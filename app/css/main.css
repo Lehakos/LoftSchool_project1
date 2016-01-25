@@ -100,14 +100,14 @@ img {
 }
 
 .container {
-  width: 960px;
+  min-width: 400px;
+  max-width: 960px;
+  width: 96%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .container_wide {
-  width: 96%;
-  min-width: 960px;
   max-width: 1200px;
 }
 
@@ -398,6 +398,18 @@ img {
 .main__col-right {
   float: right;
   width: 650px;
+}
+
+@media screen and (max-width: 1023px) {
+
+  .main__col-left {
+    width: 100%;
+  }
+
+  .main__col-right {
+    width: 100%;
+  }
+
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ SIDEBAR ~~~~~~~~~~~~~~~~~~~~~ */
@@ -696,6 +708,14 @@ img {
   font-family: 'open_sanssemibold', Arial, sans-serif;
 }
 
+@media screen and (max-width: 767px) {
+
+  .section__content {
+    padding: 15px;
+  }
+
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~ PHOTO ~~~~~~~~~~~~~~~~~~~~~ */
 
 .photo {
@@ -730,7 +750,8 @@ img {
 
 .general__table {
   float: left;
-  width: 388px;
+  min-width: 300px;
+  width: 67.12802768%; /*388/578*/
 }
 
 .general__table-row {
@@ -768,6 +789,21 @@ img {
 .general__skills-item {
   margin-right: 5px;
   margin-top: 6px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .general__table {
+    width: 100%;
+  }
+
+  .general__photo {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ ICONS-LIST ~~~~~~~~~~~~~~~~~~~~~ */
@@ -815,6 +851,24 @@ img {
   left: 5px;
 
   margin-top: -27px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .icons-list {
+    text-align: center;
+  }
+
+  .icons-list__item {
+    padding: 20px 15px 15px;
+  }
+
+  .icons-list__icon-wrapper {
+    position: relative;
+
+    margin: 0 auto 10px;
+  }
+
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ TAG ~~~~~~~~~~~~~~~~~~~~~ */
@@ -876,10 +930,12 @@ img {
 }
 
 .footer__container {
+  position: relative;
+
   height: 60px;
 }
 
-.footer__container:after {
+.footer__container:before {
   content: '';
   display: inline-block;
   width: 0;
@@ -925,6 +981,19 @@ img {
   font-size: .75em; /* 12/16 */
   color: #727070;
   vertical-align: middle;
+}
+
+@media screen and (max-width: 767px) {
+
+  .footer__auth {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footer__copyright {
+    font-size: 8px;
+  }
+
 }
 
 /* ~~~~~~~~~~~~~~ FORM ~~~~~~~~~~~~~~~ */
