@@ -190,7 +190,10 @@
 @media screen and (max-width: 767px) {
 
   .works__item-wrapper {
+    display: block;
     width: 280px;
+    margin-left: auto;
+    margin-right: auto;
 
     font-size: 21px;
   }

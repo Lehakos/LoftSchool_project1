@@ -100,7 +100,7 @@ img {
 }
 
 .container {
-  min-width: 400px;
+  min-width: 320px;
   max-width: 960px;
   width: 96%;
   margin-left: auto;
@@ -956,6 +956,7 @@ img {
   color: #9c9c9c;
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(255, 255, 255, .85);
+  vertical-align: middle;
 }
 
 .footer__auth:before {
@@ -981,6 +982,7 @@ img {
   font-family: 'open_sanslight', Arial, sans-serif;
   font-size: .75em; /* 12/16 */
   color: #727070;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 1023px) {
@@ -1016,7 +1018,9 @@ img {
   }
 
   .footer__copyright {
-    font-size: 10px;
+    max-width: 70%;
+
+    font-size: 8px;
   }
 
 }
@@ -1314,7 +1318,7 @@ img {
   z-index: 100;
 
   display: none;
-  padding: 25px;
+  padding: 30px 0;
 
   text-align: center;
 
@@ -1338,7 +1342,8 @@ img {
   position: relative;
 
   display: inline-block;
-  width: 365px;
+  max-width: 365px;
+  width: 90%;
   padding: 25px 20px;
 
   vertical-align: middle;
