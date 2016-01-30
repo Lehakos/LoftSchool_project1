@@ -116,8 +116,6 @@ img {
 
   min-height: 100%;
 
-  background: url('../images/bg-main.jpg') no-repeat center center;
-  background-size: cover;
   overflow: hidden;
 }
 
@@ -396,6 +394,11 @@ img {
 
 .main {
   padding-top: 35px;
+  padding-bottom: 35px;
+
+  background: url('../images/bg-main.jpg') no-repeat center center;
+  background-size: cover;
+  border-top: 1px solid #decf9a;
 }
 
 .main__col-left {
@@ -425,10 +428,6 @@ img {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~ SIDEBAR ~~~~~~~~~~~~~~~~~~~~~ */
-
-.sidebar {
-  margin-bottom: 35px;
-}
 
 .sidebar__nav {
   margin-bottom: 40px;
@@ -680,14 +679,16 @@ img {
 /* ~~~~~~~~~~~~~~~~~~~~ SECTION ~~~~~~~~~~~~~~~~~~~~~ */
 
 .section {
-  margin-bottom: 35px;
-
   font-size: 0.875em; /*14/16*/
   color: #727070;
 
   border: 1px solid #b7b7b7;
   border-radius: 5px;
   overflow: hidden;
+}
+
+.section + .section {
+  margin-top: 35px;
 }
 
 .section__header {
