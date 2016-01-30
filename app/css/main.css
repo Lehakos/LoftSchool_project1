@@ -176,7 +176,7 @@ img {
 
 .social__item {
   display: inline-block;
-  margin-left: 15px;
+  margin-left: 13px;
 
   font-size: 16px;
   vertical-align: top;
@@ -530,21 +530,24 @@ img {
   overflow: hidden;
 }
 
-.contacts__title {
-  margin: 0;
+.contacts__header {
   padding: 10px 25px;
-
-  font-size: 1.25em; /*20/16*/
-  line-height: 1.1; /*22/20*/
-  font-family: 'open_sanssemibold', Arial, sans-serif;
-  color: #d0982c;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, .4);
 
   background-color: #efc778;
   background-image: -webkit-linear-gradient(bottom, #dcb15d 0%, #f4cc7e 90%);
   background-image: linear-gradient(to top, #dcb15d 0%, #f4cc7e 90%);
   box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.17),
               inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25);
+}
+
+.contacts__title {
+  margin: 0;
+
+  font-size: 1.25em; /*20/16*/
+  line-height: 1.1; /*22/20*/
+  font-family: 'open_sanssemibold', Arial, sans-serif;
+  color: #d0982c;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, .4);
 }
 
 .contacts__menu {
@@ -687,20 +690,23 @@ img {
   overflow: hidden;
 }
 
+.section__header {
+  padding: 15px 40px 20px;
+
+  background-color: #a9a8a8;
+  background-image: -webkit-linear-gradient(bottom, #7b7878 0%, #a9a8a8 100%);
+  background-image: linear-gradient(to top, #7b7878 0%, #a9a8a8 100%);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .3);
+}
+
 .section__title {
   margin: 0;
-  padding: 15px 40px 20px;
 
   font-family: 'open_sanssemibold', Arial, sans-serif;
   font-size: 1.7142857143em; /*24/14*/
   line-height: 0.9166666667; /*22/24*/
   color: #eeedec;
   text-shadow: 0px 1px 0px #666565;
-
-  background-color: #a9a8a8;
-  background-image: -webkit-linear-gradient(bottom, #7b7878 0%, #a9a8a8 100%);
-  background-image: linear-gradient(to top, #7b7878 0%, #a9a8a8 100%);
-  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .3);
 }
 
 .section__content {
@@ -1029,7 +1035,7 @@ img {
 
 .form__block {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
   padding: 0;
 
   font-size: 0;
@@ -1169,7 +1175,7 @@ img {
 
 .label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
   font-size: 14px; /*14/16*/
   color: #727070;
@@ -1237,7 +1243,9 @@ img {
   opacity: 0;
 
   -webkit-transition: opacity .4s ease, -webkit-transform .3s ease;
+          transition: opacity .4s ease, -webkit-transform .3s ease;
           transition: opacity .4s ease, transform .3s ease;
+          transition: opacity .4s ease, transform .3s ease, -webkit-transform .3s ease;
 }
 
 .no-opacity .btn:after {

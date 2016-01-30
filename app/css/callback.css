@@ -1,5 +1,10 @@
 /* ~~~~~~~~~~~~~~ CALLBACK ~~~~~~~~~~~~~~~ */
 
+.callback__content {
+  padding-top: 29px;
+  padding-bottom: 29px;
+}
+
 .callback__form {
   width: 100%;
   max-width: 400px;
