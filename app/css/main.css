@@ -1086,6 +1086,7 @@ img {
 
   font-family: 'open_sanslight', Arial, sans-serif;
   font-size: 12px; /*12/16*/
+  line-height: 38px;
 
   border: 1px solid #d6d5d3;
   border-radius: 3px;
@@ -1121,6 +1122,11 @@ img {
               0px 1px 0px 0px rgba(255, 255, 255, 0.35),
               inset 0px 2px 2px 0px rgba(114, 112, 112, 0.1);
   outline: none;
+}
+
+.placeholder {
+  color: #c7c6c6;
+  opacity: 1;
 }
 
 /* ~~~~~~~~~~~~~~ TEXTAREA ~~~~~~~~~~~~~~~ */

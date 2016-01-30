@@ -1,5 +1,9 @@
 $(function() {
 
+  // Placeholder для старых браузеров
+
+  $('input, textarea').placeholder();
+
   // ПОПАПЫ
 
   $('.js-popup-open').on('click', function(e) {
