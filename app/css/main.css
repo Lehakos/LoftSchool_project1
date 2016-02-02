@@ -771,6 +771,10 @@ img {
   float: left;
   min-width: 300px;
   width: 67.12802768%; /*388/578*/
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
 }
 
 .general__table-row {
@@ -1088,6 +1092,7 @@ img {
   font-family: 'open_sanslight', Arial, sans-serif;
   font-size: 12px; /*12/16*/
   line-height: 38px;
+  color: #000;
 
   border: 1px solid #d6d5d3;
   border-radius: 3px;
@@ -1140,6 +1145,7 @@ img {
 
   font-family: 'open_sanslight', Arial, sans-serif;
   font-size: 12px; /*12/16*/
+  color: #000;
 
   border: 1px solid #d6d5d3;
   border-radius: 3px;
