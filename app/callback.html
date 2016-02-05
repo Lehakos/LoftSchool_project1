@@ -25,6 +25,7 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="bower/normalize-css/normalize.css">
+  <link rel="stylesheet" href="bower/qtip2/jquery.qtip.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/callback.css">
   <script src="js/vendor/modernizr.js"></script>
@@ -141,17 +142,20 @@
                 <fieldset class="form__block">
                   <div class="form__col callback__form-col">
                     <label for="form-name" class="label">Имя</label>
-                    <input name="name" type="text" id="form-name" class="input" placeholder="Как к Вам обращаться">
+                    <input name="name" type="text" id="form-name" class="input" placeholder="Как к Вам обращаться" required
+                      data-tooltip-text="введите имя" data-tooltip-pos="left">
                   </div>
                   <div class="form__col callback__form-col">
                     <label for="form-email" class="label">Email</label>
-                    <input name="email" type="email" id="form-email" class="input" placeholder="Куда мне писать">
+                    <input name="email" type="email" id="form-email" class="input" placeholder="Куда мне писать" required
+                      data-tooltip-text="введите email" data-tooltip-pos="right">
                   </div>
                 </fieldset>
 
                 <fieldset class="form__block">
                   <label for="form-message" class="label">Сообщение</label>
-                  <textarea name="message" id="form-message" class="textarea" placeholder="Кратко в чем суть"></textarea>
+                  <textarea name="message" id="form-message" class="textarea" placeholder="Кратко в чем суть" required
+                    data-tooltip-text="ваш вопрос" data-tooltip-pos="left"></textarea>
                 </fieldset>
 
                 <label for="form-captcha" class="label">Введите код, указанный на картинке</label>
@@ -160,7 +164,8 @@
                     <div class="captcha"><img src="images/captcha.jpg" alt="Каптча"></div>
                   </div>
                   <div class="form__col">
-                    <input name="captcha" type="text" id="form-captcha" class="input" placeholder="Введите код">
+                    <input name="captcha" type="text" id="form-captcha" class="input" placeholder="Введите код" required
+                      data-tooltip-text="код капчи" data-tooltip-pos="right">
                   </div>
                 </fieldset>
 
@@ -197,6 +202,7 @@
 
   <script src="bower/jquery/dist/jquery.min.js"></script>
   <script src="bower/jquery-placeholder/jquery.placeholder.min.js"></script>
+  <script src="bower/qtip2/jquery.qtip.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

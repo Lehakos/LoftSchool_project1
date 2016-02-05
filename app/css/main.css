@@ -1038,6 +1038,16 @@ img {
 
 /* ~~~~~~~~~~~~~~ FORM ~~~~~~~~~~~~~~~ */
 
+.form .invalid,
+.form .invalid:focus {
+  box-shadow: 0 0 4px 0 rgba(239, 70, 63, 0.85);
+}
+
+.form .valid,
+.form .valid:focus {
+  box-shadow: 0 0 4px 0 rgba(90, 245, 43, 0.85);
+}
+
 .form__block {
   margin: 0;
   margin-bottom: 13px;
@@ -1130,11 +1140,6 @@ img {
   outline: none;
 }
 
-.placeholder {
-  color: #c7c6c6;
-  opacity: 1;
-}
-
 /* ~~~~~~~~~~~~~~ TEXTAREA ~~~~~~~~~~~~~~~ */
 
 .textarea {
@@ -1184,6 +1189,11 @@ img {
   outline: none;
 }
 
+.placeholder {
+  color: #c7c6c6;
+  opacity: 1;
+}
+
 /* ~~~~~~~~~~~~~~ LABEL ~~~~~~~~~~~~~~~ */
 
 .label {
@@ -1213,6 +1223,31 @@ img {
   right: 0;
 
   margin: auto;
+}
+
+/* ~~~~~~~~~~~~~~ TOOLTIP ~~~~~~~~~~~~~~~ */
+
+.tooltip {
+  background-color: #f19f84;
+  box-shadow: 0 2px 1px 0 rgba(9, 9, 9, .17),
+              inset 0 1px 0 0 rgba(255, 255, 255, .25);
+  border: 1px solid #cb6945;
+}
+
+.tooltip.qtip-pos-rc {
+  margin-left: -3px;
+}
+
+.tooltip.qtip-pos-lc {
+  margin-left: 3px;
+}
+
+.tooltip .qtip-content {
+  font-size: 12px;
+  line-height: 1.2;
+  font-family: "open_sanssemibold", Arial, sans-serif;
+  color: #9a4e32;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .45);
 }
 
 /* ~~~~~~~~~~~~~~ BTN ~~~~~~~~~~~~~~~ */
@@ -1403,7 +1438,8 @@ img {
 .input-file {
   position: relative;
 
-  padding-right: 60px;
+  padding-right: 50px;
+  padding-left: 0;
 
   color: #c7c6c6;
   white-space: nowrap;
@@ -1425,8 +1461,9 @@ img {
 .input-file__text {
   display: inline-block;
   width: 100%;
+  padding-left: 8px;
+  padding-right: 10px;
 
-  vertical-align: middle;
   text-overflow: ellipsis;
 
   overflow: hidden;
@@ -1503,4 +1540,12 @@ img {
 
   border: 0;
   overflow: hidden;
+}
+
+.input-file__hidden.invalid ~ .input-file__text {
+  box-shadow: 0 0 4px 0 rgba(239, 70, 63, 0.85);
+}
+
+.input-file__hidden.valid ~ .input-file__text {
+  box-shadow: 0 0 4px 0 rgba(90, 245, 43, 0.85);
 }

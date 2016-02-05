@@ -25,6 +25,7 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="bower/normalize-css/normalize.css">
+  <link rel="stylesheet" href="bower/qtip2/jquery.qtip.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/works.css">
   <script src="js/vendor/modernizr.js"></script>
@@ -249,28 +250,30 @@
 
         <div class="form__block form__block_margin_s">
           <label for="form-project-name" class="label">Название проекта</label>
-          <input type="text" id="form-project-name" class="input" name="name" placeholder="Введите название">
+          <input type="text" id="form-project-name" class="input" name="name" placeholder="Введите название" required
+            data-tooltip-text="введите название" data-tooltip-pos="left">
         </div>
 
         <div class="form__block form__block_margin_s">
           <label for="form-project-img" class="label">Картинка проекта</label>
           <label for="form-project-img" class="input-file input">
+            <input type="file" id="form-project-img" class="input-file__hidden" name="img" required
+              data-tooltip-text="изображение" data-tooltip-pos="left">
             <span class="input-file__text">Загрузите изображение</span>
             <span class="input-file__btn">
               <i class="icon icon_cloud input-file__icon">Нажмите сюда и выберите файл изображения с Вашего компьютера</i>
             </span>
-            <input type="file" id="form-project-img" class="input-file__hidden" name="img">
           </label>
         </div>
 
         <div class="form__block form__block_margin_s">
           <label for="form-project-url" class="label">URL проекта</label>
-          <input type="url" id="form-project-url" class="input" name="url" placeholder="Добавьте ссылку в формате http://url.com">
+          <input type="url" id="form-project-url" class="input" name="url" placeholder="Добавьте ссылку в формате http://url.com" required data-tooltip-text="ссылка на проект" data-tooltip-pos="left">
         </div>
 
         <div class="form__block">
           <label for="form-project-desc" class="label">Описание</label>
-          <textarea id="form-project-desc" class="textarea textarea_size_s" name="description" placeholder="Пара слов о Вашем проекте"></textarea>
+          <textarea id="form-project-desc" class="textarea textarea_size_s" name="description" placeholder="Пара слов о Вашем проекте" required data-tooltip-text="описание проекта" data-tooltip-pos="left"></textarea>
         </div>
 
         <button class="btn btn_bright btn_pos_center" type="submit"><span class="btn__text">Добавить</span></button>
@@ -282,6 +285,7 @@
 
   <script src="bower/jquery/dist/jquery.min.js"></script>
   <script src="bower/jquery-placeholder/jquery.placeholder.min.js"></script>
+  <script src="bower/qtip2/jquery.qtip.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
