@@ -70,12 +70,20 @@ var app = (function() {
     // Скрыть попап
     var hidePopup = function($popup) {
 
+        var $popupForm = $popup.find('form');
+
         $popup
             .removeClass('popup_open')
             .fadeOut('slow', function() {
                 $('html').removeClass('no-scroll');
                 toggleScrollBar('html');
         });
+
+        if ($popupForm.length) {
+
+            $popupForm.get(0).reset();
+
+        }
 
     };
 
@@ -225,13 +233,14 @@ var formsModule = (function() {
                     position: {
                         my: position.my,
                         at: position.at,
-                        target: position.target
+                        target: position.target,
+                        container: $form
                     },
                     show: {
                         event: 'validationFail' // тултип будет показан на кастомное событие validationFail
                     },
                     hide: {
-                        event: 'validation' // тултип будет спрятан на кастомное событие validation
+                        event: 'validation hideTooltip' // тултип будет спрятан на кастомное событие validation
                     },
                     style: {
                         classes: 'qtip-rounded tooltip'
@@ -244,8 +253,21 @@ var formsModule = (function() {
 
     }
 
+    // удаляет с элементов формы классы, добавленные при валидации
+    // а также скрывает тултипы
+    var removeValidation = function($form) {
+
+        var $fields = $form.find(':input');
+
+        $fields
+            .removeClass('invalid valid')
+            .trigger('hideTooltip');
+
+    };
+
     // Функция AJAX отправки формы
     // В начале функция валидирует форму,
+
     // затем отправляет данные из формы на указанный url
     var ajaxForm = function($form, url) {
 
@@ -282,6 +304,7 @@ var formsModule = (function() {
             $form.attr('novalidate', '');
 
             $form.on('submit', _submitForm);
+            $form.on('reset hide', _resetForm);
         }
 
     }
@@ -297,29 +320,66 @@ var formsModule = (function() {
 
     }
 
+    // функция-обработчик события reset формы
+    var _resetForm = function() {
+
+        var $this = $(this),
+            $inputFile = $(this).find('.input-file');
+
+        if ($inputFile.length) {
+
+            $inputFile.each(function() {
+
+                var $this = $(this),
+                    $hiddenInput = $this.find('.input-file__hidden'),
+                    $hiddenInputVal = $hiddenInput.val();
+
+                if ($hiddenInputVal) {
+                    $hiddenInput
+                        .val('')
+                        .trigger('change');
+                }
+
+            });
+        }
+
+        removeValidation($this);
+
+    }
+
     // Добавляем название загруженного пользователем файла в кастомный input[type="file"]
     var _styleInputFile = function() {
 
-        var inputFile = $('.input-file');
+        var $inputFile = $('.input-file');
 
-        if (inputFile.length) {
+        if ($inputFile.length) {
 
-            inputFile.each( function() {
+            $inputFile.each(function() {
 
                 var $this = $(this),
-                    $defaultVal = $this.text(),
                     $textContainer = $this.find('.input-file__text'),
+                    $defaultVal = $textContainer.text(),
                     $hiddenInput = $this.find('.input-file__hidden');
 
                 $hiddenInput.on('change', function(e) {
 
                     var fileName = e.target.value.split('\\').pop();
 
+                    console.log(fileName)
+
                     if(fileName) {
                         $textContainer.text(fileName);
 
                         if (!$this.hasClass('input-file_non-empty')) {
                             $this.addClass('input-file_non-empty');
+                        }
+
+                    } else {
+
+                        $textContainer.text($defaultVal);
+
+                        if ($this.hasClass('input-file_non-empty')) {
+                            $this.removeClass('input-file_non-empty');
                         }
                     }
 
@@ -343,6 +403,7 @@ var formsModule = (function() {
     return {
         init: init,
         validateFields: validateFields,
+        removeValidation: removeValidation,
         ajaxForm: ajaxForm
     }
 

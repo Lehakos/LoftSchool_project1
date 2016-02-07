@@ -1038,6 +1038,10 @@ img {
 
 /* ~~~~~~~~~~~~~~ FORM ~~~~~~~~~~~~~~~ */
 
+.form {
+    position: relative;
+}
+
 .form .invalid,
 .form .invalid:focus {
   box-shadow: 0 0 4px 0 rgba(239, 70, 63, 0.85);
